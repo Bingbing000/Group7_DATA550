@@ -5,3 +5,8 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
+Table 1: Descriptive statistics of the patients, stratified by sex.
+```{r}
+table_one <- readRDS(file = here::here("output/table_YingXu.rds"))
+table_one
+```
