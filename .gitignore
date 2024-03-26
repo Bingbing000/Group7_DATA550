@@ -2,3 +2,4 @@ Datasets/
 *.png
 *.html
 .DS_Store
+.Rhistory
