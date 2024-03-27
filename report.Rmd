@@ -1,17 +1,29 @@
 ---
-title: "report"
-author: "Group 7: "
+title: "The analysis of covid-19 in Mexico "
+author: "Group 7: Bingbing Wu, Jack Alperstein, Ruth Ma, Seana Cleary, Ying Xu"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document:
+    highlight: haddock
+    toc: true
+params:
+  production: TRUE
 ---
 
-Table 1: Descriptive statistics of the patients, stratified by sex.
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+## Table 1: Descriptive statistics of the patients, stratified by sex.
 ```{r}
 table_one <- readRDS(file = here::here("output/table_YingXu.rds"))
 table_one
 ```
 
-Graph: Healthcare Utilization Graph
+## Graph: Healthcare Utilization Graph
 ```{r}
 graph1 <- readRDS(file = here::here("output/Bingbing_graph.rds"))
 graph1
