@@ -6,7 +6,6 @@ data <- read.csv(
   file = here::here("raw_data/covid_sub.csv")
 )
 
-
 # Convert categorical columns to factors
 data <- data %>%
   mutate_at(vars(USMER, SEX, PATIENT_TYPE, INTUBED, PNEUMONIA, PREGNANT, DIABETES, COPD, ASTHMA, INMSUPR, HIPERTENSION, OTHER_DISEASE, CARDIOVASCULAR, OBESITY, RENAL_CHRONIC, TOBACCO, ICU), factor)
@@ -41,10 +40,11 @@ bar_graph <- ggplot(mortality_rate, aes(x = AGE_GROUP, y = Mortality_Rate, fill 
        y = "Mortality Rate",
        fill = "Pre-existing Condition")
 
-ggsave(
-  here::here ("output/Bingbing_graph.png"),
-  plot = bar_graph,
-  device = "png"
+saveRDS(
+  bar_graph, 
+  file = here::here("output/Bingbing_graph.rds")
 )
+
+
 
 
