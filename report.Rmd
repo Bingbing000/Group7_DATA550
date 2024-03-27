@@ -10,7 +10,7 @@ Table 1: Descriptive statistics of the patients, stratified by sex.
 table_one <- readRDS(file = here::here("output/table_YingXu.rds"))
 table_one
 ```
-=======
+
 Graph: Healthcare Utilization Graph
 ```{r}
 graph1 <- readRDS(file = here::here("output/Bingbing_graph.rds"))
