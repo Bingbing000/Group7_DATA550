@@ -13,21 +13,23 @@ You could download the dataset from https://datos.gob.mx/busca/dataset/informaci
 
 # Code Description
 
-`code/00_read_data.R`
-- read raw data from online or `raw_data/` folder
-- save clean data in `derived_data/` folder
+`code/01_table_YingXu.R`
+- write here
 
-`code/01_make_table1.R`
-- read clean data from `derived_data/` folder
-- save table 1 in `output/tables/` folder
+`code/02_Bingbing_graph.R`
+- write here
 
-`code/02_make_plots.R`
-- read clean data from `derived_data/` folder
-- save scatter plot in `output/figures/` folder
+`code/03_Jack_analysis_graph.R`
+- write here
 
-`code/03_render_report.R`
-- render `report.Rmd` 
-- save compiled report in main folder
+`code/04_respiratory.R`
+- read data from `raw_data/` folder
+- clean code to perform logistic regression (exposure: respiratory conditions, outcome: ICU admission, covariates: age, sex, tobacco use, pre-existing conditions)
+- create plot of odds ratios for pneuomia, COPD, and asthma from logistic regression
+- save plot in `output/` folder
+
+`code/05_render_report.R`
+- write here
 
 `code/report.Rmd`
 - read data, tables, and figures from respective locations
