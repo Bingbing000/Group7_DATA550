@@ -23,14 +23,27 @@ summary(model)
 
 # Get odds ratios and their confidence intervals
 odds_ratios <- tidy(model, exponentiate = TRUE, conf.int = TRUE) %>% 
-  filter(term != "(Intercept)",
-         term != "AGE")
+  filter(term != "(Intercept)") 
 
-odds_ratios$term <- gsub("yes", "", odds_ratios$term, ignore.case = TRUE)
-odds_ratios$term <- gsub("male", "", odds_ratios$term, ignore.case = TRUE)
+odds_ratios <- odds_ratios %>% 
+  mutate(term = case_when(
+    term == "TOBACCOYes" ~ "Tobacco Smoker",
+    term == "SEXmale" ~ "Male",
+    term == "RENAL_CHRONICYes" ~ "Chronic Renal Disease",
+    term == "OBESITYYes" ~ "Obesity",
+    term == "INMSUPRYes" ~ "Immunosuppressed",
+    term == "HIPERTENSIONYes" ~ "Hypertension",
+    term == "DIABETESYes" ~ "Diabetes",
+    term == "CARDIOVASCULARYes" ~ "Cardiovascular Disease",
+    term == "ASTHMAYes" ~ "Asthmatic",
+    term == "COPDYes" ~ "COPD",
+    TRUE ~ term
+  )) %>% 
+  arrange(desc(term))
+
 
 # Plotting
-ggplot(odds_ratios, aes(x = term, y = estimate)) +
+or_graph <- ggplot(odds_ratios, aes(x = term, y = estimate)) +
   geom_point() +
   geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2) +
   coord_flip() + 
@@ -39,3 +52,8 @@ ggplot(odds_ratios, aes(x = term, y = estimate)) +
   ylab("Odds Ratio") +
   ggtitle("Odds Ratios of Risk Factors for Dying of COVID") +
   theme_minimal()
+
+saveRDS(
+  or_graph,
+  file = here::here("output/Jack_graph.rds")
+)
