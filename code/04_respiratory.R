@@ -1,7 +1,7 @@
 here::i_am("code/04_respiratory.R")
 
-data <- read.csv(
-  file=here::here("raw_data/covid_sub.csv")
+data <- readRDS(
+  file=here::here("output/data_custom.rds")
 )
 
 pacman::p_load(dplyr,sjPlot,sjlabelled,sjmisc,ggplot2)

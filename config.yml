@@ -1,0 +1,10 @@
+# customization - #default subsets the data to people under 55 and old_age subsets
+# the data to 55+ years old
+
+# specify WHICH_CONFIG="default" or WHICH_CONFIG="old_age" in the terminal
+
+default: 
+  age_cat: 0
+
+old_age:
+  age_cat: 1

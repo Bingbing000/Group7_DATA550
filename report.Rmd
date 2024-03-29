@@ -10,10 +10,24 @@ params:
   production: TRUE
 ---
 
+```{r, read-config, include=FALSE}
+WHICH_CONFIG <- Sys.getenv("WHICH_CONFIG")
+config_list <- config::get(
+  config = WHICH_CONFIG
+)
+```
+
 ```{r, set-chunk-opts, echo = FALSE, eval = params$production}
 library(knitr)
 opts_chunk$set(
   echo = FALSE, warning = FALSE, message = FALSE
+)
+```
+
+```{r, load-data}
+here::i_am("report.Rmd")
+data <- readRDS(
+  file=here::here("output/data_custom.rds")
 )
 ```
 
