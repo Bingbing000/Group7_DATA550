@@ -1,6 +1,6 @@
 library(tidyverse)
 
-here::i_am("code/Bingbing_graph.R")
+here::i_am("code/02_Bingbing_graph.R")
 
 data <- read.csv(
   file = here::here("raw_data/covid_sub.csv")
