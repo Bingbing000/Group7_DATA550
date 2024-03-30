@@ -6,7 +6,7 @@ To exclude the code and provide a cleaner view for collaborators, open the file 
 Conversely, to include the code for thorough inspection of the entire report, open the file '05_render_report.R' and set `params: production: FALSE` in the YAML title. This will generate a report with the code included.
 
 - Analysis on the whole dataset or only 55+ years population:
-There is a config.yml that has been set up to run two versions of the analyses: one for all subjects and one for subjects 55+. To run the analysis for all subjects, type `WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `WHICH_CONFIG="old_age"` into the terminal.
+There is a config.yml that has been set up to run two versions of the analyses: one for all subjects and one for subjects 55+. To run the analysis for all subjects, type `export WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `export WHICH_CONFIG="old_age"` into the terminal.
 
 # How to create the final report
 

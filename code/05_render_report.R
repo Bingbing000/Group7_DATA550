@@ -7,14 +7,12 @@ config_list <- config::get(
   config=WHICH_CONFIG
 )
 
-report_filename <- paste0(
-  "report_config_",
-  WHICH_CONFIG,
-  ".html"
+report_filename <- paste(
+  "report_config_", WHICH_CONFIG, ".html", sep=""
 )
 
 # render report
 rmarkdown::render(
-  here::here("report.Rmd"),
+  "report.Rmd",
   output_file = report_filename
 )
