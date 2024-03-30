@@ -28,3 +28,9 @@ table_one
 graph1 <- readRDS(file = here::here("output/Bingbing_graph.rds"))
 graph1
 ```
+
+## Graph: Odds Ratios of Risk Factors for Dying of COVID
+```{r}
+graph2 <- readRDS(file = here::here("output/Jack_graph.rds"))
+graph2
+```
