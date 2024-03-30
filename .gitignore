@@ -1,5 +1,6 @@
 Datasets/
-*.png
+output/*.rds
+output/*.png
 *.html
 .DS_Store
 .Rhistory

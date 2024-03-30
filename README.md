@@ -1,41 +1,53 @@
-# How to run the program
-Please set the working directory to your local folder containing the program "~/Final_DATA550-master", use the following command: `setwd("~/Group7_DATA550-master")`.
-
-All code files are located in the 'code' folder. Using __'make'__ simplifies the process of running all codes and generating the report file. However, if you're unfamiliar with 'make', you can __run the files individually starting with '00_read_data.Rmd', followed by '01_make_table1.R', '02_make_plots.R', and finally '03_render_report.R'__.
-
-Tables and plots will be generated in the 'output' folder, while the final report will be found in the main folder.
-
-# About the dataset
-Feel free to skip this section if the scientific background doesn't interest you.
-
-This is a dataset about information regarding covid-19 cases in Mexico (20% of the full data set).\
-You could download the dataset from https://datos.gob.mx/busca/dataset/informacion-referente-a-casos-covid-19-en-mexico.
-
-# Code Description
-
-`code/00_read_data.R`
-- read raw data from online or `raw_data/` folder
-- save clean data in `derived_data/` folder
-
-`code/01_make_table1.R`
-- read clean data from `derived_data/` folder
-- save table 1 in `output/tables/` folder
-
-`code/02_make_plots.R`
-- read clean data from `derived_data/` folder
-- save scatter plot in `output/figures/` folder
-
-`code/03_render_report.R`
-- render `report.Rmd` 
-- save compiled report in main folder
-
-`code/report.Rmd`
-- read data, tables, and figures from respective locations
-- display results for production report
-
 # Customization
 
 - final report\
 You have the option to include the code in the final report or not.\
 To exclude the code and provide a cleaner view for collaborators, open the file '05_render_report.R' and set `params: production: TRUE` in the YAML title. This will generate a report without displaying the code.\
 Conversely, to include the code for thorough inspection of the entire report, open the file '05_render_report.R' and set `params: production: FALSE` in the YAML title. This will generate a report with the code included.
+
+- There is a config.yml that has been set up to run two versions of the analyses: one for subjects under the age of 55 and one for subjects 55+. To run the analysis for subjects under the age of 55, type `WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `WHICH_CONFIG="old_age"` into the terminal.
+
+# How to create the final report
+
+- First, download project files from https://github.com/ruth-ma/Group7_DATA550 onto a local computer and save to desired location
+
+### Final report using git bash terminal
+
+- Set the Group7_DATA550 folder as the project directory in the bash terminal using the cd command
+- Type `make` into the terminal to generate the sjc_final_2.html product
+
+### Final report using the RStudio console
+
+- Set the working directory to your local folder using the `setwd()` command
+- You can run the files individually starting with '00_custom_code.R', followed by '01_table_YingXu.R', '02_Bingbing_graph.R', '04_respiratory.R' and finally '05_render_report.R'.
+- Tables and plots will be generated in the 'output' folder, while the final report will be found in the main folder.
+
+# About the dataset
+
+- This is a dataset about information regarding COVID-19 cases in Mexico (20% of the full data set).
+- Information about the variables included in the dataset can be found in the `covid_readme.txt` file in the `raw_data/` folder
+-You could download the dataset from https://datos.gob.mx/busca/dataset/informacion-referente-a-casos-covid-19-en-mexico.
+
+# Code Description
+
+`code/01_table_YingXu.R`
+- write here
+
+`code/02_Bingbing_graph.R`
+- write here
+
+`code/03_Jack_analysis_graph.R`
+- write here
+
+`code/04_respiratory.R`
+- read data from `raw_data/` folder
+- clean code to perform logistic regression (exposure: respiratory conditions, outcome: ICU admission, covariates: age, sex, tobacco use, pre-existing conditions)
+- create plot of odds ratios for pneuomia, COPD, and asthma from logistic regression
+- save plot in `output/` folder
+
+`code/05_render_report.R`
+- renders `report.Rmd` R Markdown file
+
+`report.Rmd`
+- read data, tables, and figures from respective locations
+- display results for production report
