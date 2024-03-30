@@ -3,7 +3,9 @@ here::i_am("code/01_table_YingXu.R")
 
 #Read data
 library(tidyverse)
-covid_sub <- read_csv(file = here::here("raw_data/covid_sub.csv"))
+covid_sub <- readRDS(
+  data, file=here::here("data_custom/data_custom.rds")
+)
 
 #Construct table
 library(gtsummary)

@@ -1,5 +1,5 @@
 ---
-title: "The analysis of covid-19 in Mexico "
+title: "The analysis of covid-19 in Mexico"
 author: "Group 7: Bingbing Wu, Jack Alperstein, Ruth Ma, Seana Cleary, Ying Xu"
 date: "`r Sys.Date()`"
 output:
@@ -37,14 +37,21 @@ table_one <- readRDS(file = here::here("output/table_YingXu.rds"))
 table_one
 ```
 
-## Graph: Healthcare Utilization Graph
+## Figure 1.
 ```{r}
 graph1 <- readRDS(file = here::here("output/Bingbing_graph.rds"))
 graph1
 ```
 
-## Graph: Odds Ratios of Risk Factors for Dying of COVID
+## Figure 2
 ```{r}
 graph2 <- readRDS(file = here::here("output/Jack_graph.rds"))
 graph2
+```
+
+## Figure 3
+```{r}
+knitr::include_graphics(
+  here::here("output/resp_or.png")
+)
 ```

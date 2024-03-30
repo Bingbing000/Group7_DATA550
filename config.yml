@@ -4,7 +4,7 @@
 # specify WHICH_CONFIG="default" or WHICH_CONFIG="old_age" in the terminal
 
 default: 
-  age_cat: 0
-
+  whole_dataset: TRUE
+  
 old_age:
-  age_cat: 1
+  whole_dataset: FALSE

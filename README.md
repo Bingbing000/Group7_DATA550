@@ -1,11 +1,12 @@
 # Customization
 
-- final report\
+- Final report\
 You have the option to include the code in the final report or not.\
 To exclude the code and provide a cleaner view for collaborators, open the file '05_render_report.R' and set `params: production: TRUE` in the YAML title. This will generate a report without displaying the code.\
 Conversely, to include the code for thorough inspection of the entire report, open the file '05_render_report.R' and set `params: production: FALSE` in the YAML title. This will generate a report with the code included.
 
-- There is a config.yml that has been set up to run two versions of the analyses: one for subjects under the age of 55 and one for subjects 55+. To run the analysis for subjects under the age of 55, type `WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `WHICH_CONFIG="old_age"` into the terminal.
+- Analysis on the whole dataset or only 55+ years population:
+There is a config.yml that has been set up to run two versions of the analyses: one for all subjects and one for subjects 55+. To run the analysis for all subjects, type `WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `WHICH_CONFIG="old_age"` into the terminal.
 
 # How to create the final report
 
@@ -14,12 +15,12 @@ Conversely, to include the code for thorough inspection of the entire report, op
 ### Final report using git bash terminal
 
 - Set the Group7_DATA550 folder as the project directory in the bash terminal using the cd command
-- Type `make` into the terminal to generate the sjc_final_2.html product
+- Type `make` into the terminal to generate the report.html product
 
 ### Final report using the RStudio console
 
 - Set the working directory to your local folder using the `setwd()` command
-- You can run the files individually starting with '00_custom_code.R', followed by '01_table_YingXu.R', '02_Bingbing_graph.R', '04_respiratory.R' and finally '05_render_report.R'.
+- You can run the files individually starting with '00_custom_code.R', followed by '01_table_YingXu.R', '02_Bingbing_graph.R', '03_Jack_analysis_graph.R', '04_Seana_respiratory.R' and finally '05_render_report.R'.
 - Tables and plots will be generated in the 'output' folder, while the final report will be found in the main folder.
 
 # About the dataset
@@ -29,6 +30,10 @@ Conversely, to include the code for thorough inspection of the entire report, op
 -You could download the dataset from https://datos.gob.mx/busca/dataset/informacion-referente-a-casos-covid-19-en-mexico.
 
 # Code Description
+`code/00_custom_code.R`
+- read data from `data_raw/` folder
+- add the age group variable
+- save data to `data_custom/` folder
 
 `code/01_table_YingXu.R`
 - write here
@@ -39,10 +44,9 @@ Conversely, to include the code for thorough inspection of the entire report, op
 `code/03_Jack_analysis_graph.R`
 - write here
 
-`code/04_respiratory.R`
-- read data from `raw_data/` folder
+`code/04_Seana_respiratory.R`
 - clean code to perform logistic regression (exposure: respiratory conditions, outcome: ICU admission, covariates: age, sex, tobacco use, pre-existing conditions)
-- create plot of odds ratios for pneuomia, COPD, and asthma from logistic regression
+- create plot of odds ratios for pneumonia, COPD, and asthma from logistic regression
 - save plot in `output/` folder
 
 `code/05_render_report.R`

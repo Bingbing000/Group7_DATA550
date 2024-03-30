@@ -6,7 +6,9 @@ library(tidyverse)
 library(broom)
 
 # Read in Data
-data <- read_csv(file = here::here("raw_data/covid_sub.csv"))
+data <- readRDS(
+  data, file=here::here("data_custom/data_custom.rds")
+)
 
 # Conver DATE_DIED to binary Death Outcome
 data$Death <- ifelse(is.na(data$DATE_DIED), 0, 1)
@@ -40,7 +42,6 @@ odds_ratios <- odds_ratios %>%
     TRUE ~ term
   )) %>% 
   arrange(desc(term))
-
 
 # Plotting
 or_graph <- ggplot(odds_ratios, aes(x = term, y = estimate)) +

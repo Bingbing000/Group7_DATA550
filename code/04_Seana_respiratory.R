@@ -1,7 +1,7 @@
-here::i_am("code/04_respiratory.R")
+here::i_am("code/04_Seana_respiratory.R")
 
 data <- readRDS(
-  file=here::here("output/data_custom.rds")
+  file=here::here("data_custom/data_custom.rds")
 )
 
 pacman::p_load(dplyr,sjPlot,sjlabelled,sjmisc,ggplot2)

@@ -2,8 +2,8 @@ library(tidyverse)
 
 here::i_am("code/02_Bingbing_graph.R")
 
-data <- read.csv(
-  file = here::here("raw_data/covid_sub.csv")
+data <- readRDS(
+  data, file=here::here("data_custom/data_custom.rds")
 )
 
 # Convert categorical columns to factors
@@ -44,7 +44,3 @@ saveRDS(
   bar_graph, 
   file = here::here("output/Bingbing_graph.rds")
 )
-
-
-
-
