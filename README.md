@@ -36,7 +36,8 @@ There is a config.yml that has been set up to run two versions of the analyses: 
 - save data to `data_custom/` folder
 
 `code/01_table_YingXu.R`
-- write here
+- generate table 1, which includes the descriptive statistics from the data set
+- save table1 in `output/` folder
 
 `code/02_Bingbing_graph.R`
 - write here
