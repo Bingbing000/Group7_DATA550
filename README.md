@@ -39,7 +39,10 @@ There is a config.yml that has been set up to run two versions of the analyses: 
 - write here
 
 `code/02_Bingbing_graph.R`
-- write here
+-  Analyzes COVID-19 mortality rates based on age groups and pre-existing conditions.
+- Categorizes patient age into quantiles and calculates mortality rates for different age groups, factoring in pre-existing health conditions.
+- Generates a bar graph illustrating mortality rates, which is saved in the `output/` folder.
+- Provides insights into the impact of age and health conditions on COVID-19 outcomes, aiding in healthcare planning.
 
 `code/03_Jack_analysis_graph.R`
 - write here
