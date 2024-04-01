@@ -12,7 +12,7 @@ data <- data %>%
 binary_columns <- c("INTUBED", "PNEUMONIA", "PREGNANT", "DIABETES", "COPD", "ASTHMA", "INMSUPR", "HIPERTENSION", "OTHER_DISEASE", "CARDIOVASCULAR", "OBESITY", "RENAL_CHRONIC", "TOBACCO", "ICU")
 data[binary_columns] <- lapply(data[binary_columns], function(x) forcats::fct_explicit_na(x, na_level = "Unknown"))
 
-# Assuming 'DATE_DIED' is NA for patients who didn't die, creating a binary outcome variable for mortality
+# Assuming 'DATE_DIED' is NA for patients who didn't die, and creating a binary outcome variable for mortality
 data$DIED <- ifelse(is.na(data$DATE_DIED), "No", "Yes")
 
 # Create a subset of data focusing on patient outcomes and conditions
