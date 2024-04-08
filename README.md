@@ -8,7 +8,7 @@ Conversely, to include the code for thorough inspection of the entire report, op
 - Analysis on the whole dataset or only 55+ years population:
 There is a config.yml that has been set up to run two versions of the analyses: one for all subjects and one for subjects 55+. To run the analysis for all subjects, type `export WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `export WHICH_CONFIG="old_age"` into the terminal.
 To make the `config` work, you have to use the `make` command or run 'Rscript *.R' in terminal.
-If you want to run the code directly from Rstudio or console, please first specify `WHICH_CONFIG <- 'default' or 'old_age'` in the R console.
+If you want to run the code directly from Rstudio or console, please first specify `WHICH_CONFIG <- 'default' or 'old_age'` instead of `WHICH_CONFIG <- Sys.getenv("WHICH_CONFIG")` in the R console.
 
 # How to create the final report
 
