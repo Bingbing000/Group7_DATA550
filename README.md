@@ -8,7 +8,7 @@ Conversely, to include the code for thorough inspection of the entire report, op
 - Analysis on the whole dataset or only 55+ years population:
 There is a config.yml that has been set up to run two versions of the analyses: one for all subjects and one for subjects 55+. To run the analysis for all subjects, type `export WHICH_CONFIG="default"` into the terminal. To run the analysis for subjects 55+, type `export WHICH_CONFIG="old_age"` into the terminal.
 To make the `config` work, you have to use the `make` command or run 'Rscript *.R' in terminal.
-If you want to run the code directly from Rstudio or console, please specify `WHICH_CONFIG <- Sys.getenv("WHICH_CONFIG"='default' or 'old_age')` in the `report.Rmd` file.
+If you want to run the code directly from Rstudio or console, please first specify `WHICH_CONFIG <- 'default' or 'old_age'` in the R console.
 
 # How to create the final report
 
@@ -22,6 +22,7 @@ If you want to run the code directly from Rstudio or console, please specify `WH
 ### Final report using the RStudio console
 
 - Set the working directory to your local folder using the `setwd()` command
+- set the R environment using `renv::restore()` command
 - You can run the files individually starting with '00_custom_code.R', followed by '01_table_YingXu.R', '02_Bingbing_graph.R', '03_Jack_analysis_graph.R', '04_Seana_respiratory.R' and finally '05_render_report.R'.
 - Tables and plots will be generated in the 'output' folder, while the final report will be found in the main folder.
 
