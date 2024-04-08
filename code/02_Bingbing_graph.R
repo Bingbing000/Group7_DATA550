@@ -15,7 +15,7 @@ data[binary_columns] <- lapply(data[binary_columns], function(x) forcats::fct_ex
 # Assuming 'DATE_DIED' is NA for patients who didn't die, and creating a binary outcome variable for mortality
 data$DIED <- ifelse(is.na(data$DATE_DIED), "No", "Yes")
 
-# Filter out rows where AGE is NA
+# Add Filter on where AGE is NA
 data <- data %>% 
   filter(!is.na(AGE))
 
